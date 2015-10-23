@@ -91,7 +91,7 @@ class rtf {
     var $flags = array();  // parser flags
     var $queue;  // every character which is no sepcial char, not belongs to a control word/symbol; is generally considered being 'plain'
     var $stack = array(); // group stack
-    var $groupLevel = 0; // обрабатываемый уровень группы
+    var $groupLevel = 0; // processing group level
 
     /* keywords which don't follw the specification (used by Word '97 - 2000) */
     // not yet used
@@ -158,7 +158,7 @@ class rtf {
      */
     function rtf($data) {
         $data = $this->rtfregexp($data); // by an6rew
-        error_log(print_r($data, true));
+        //error_log(print_r($data, true));
         $this->len = strlen($data);
         $this->rtf = $data;
         $this->wantXML = false;
